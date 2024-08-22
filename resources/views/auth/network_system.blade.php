@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+@extends('nav.header')
+
+@section('title', 'Hệ thống mạng lưới')
+
+@section('content')
     <style>
+        /* Đảm bảo rằng body có khoảng cách đủ để tránh bị che khuất bởi navbar */
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
             background-color: #f0f0f0;
+            /* Thêm padding-top để tạo khoảng cách cho thanh navbar */
+             /* Điều chỉnh khoảng cách tùy thuộc vào chiều cao của navbar */
         }
 
         .container {
+            margin-top:15px;
             display: flex;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,6 +23,7 @@
             overflow: hidden;
             width: 80%; /* Thêm chiều rộng cho container */
             max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+           
         }
 
         .map {
@@ -86,8 +85,7 @@
             background-color: #0056b3;
         }
     </style>
-</head>
-<body>
+
     <div class="container">
         <div class="map">
             <img src="../images/map.jpg" alt="Bản đồ Việt Nam">
@@ -115,10 +113,4 @@
             </form>
         </div>
     </div>
-
-    <!-- Include Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

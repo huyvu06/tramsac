@@ -1,31 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('nav.header')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+@section('title', 'sign')
+
+@section('content')
     <style>
-        body {
+       /* Đảm bảo rằng body chiếm toàn bộ chiều cao của viewport */
+/* Đảm bảo rằng body chiếm toàn bộ chiều cao của viewport */
+body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Căn giữa form trong khu vực còn lại của viewport */
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    flex: 1;
+    margin-top: 80px; /* Khoảng cách từ navbar xuống, điều chỉnh nếu cần */
 }
 
+/* Định dạng form */
 .registration-form {
     background-color: white;
-    padding: 30px; /* Tăng padding để form lớn hơn */
+    padding: 30px;
+    margin:10% 20% 0px 30%;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 700px; /* Tăng chiều rộng của form */
+    width: 700px; /* Có thể điều chỉnh kích thước của form */
+    max-width: 100%; /* Đảm bảo form không vượt quá kích thước của viewport */
 }
 
+/* Định dạng hàng và nhóm trong form */
 .form-row {
     display: flex;
     justify-content: space-between;
@@ -35,7 +46,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Tăng khoảng cách giữa các trường */
+    margin-right: 20px;
 }
 
 .form-group:last-child {
@@ -44,8 +55,8 @@
 
 label {
     font-weight: bold;
-    margin-bottom: 8px; /* Tăng khoảng cách giữa label và input */
-    font-size: 16px; /* Tăng kích thước chữ */
+    margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .required {
@@ -55,8 +66,8 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    padding: 15px; /* Tăng padding cho input */
-    font-size: 16px; /* Tăng kích thước chữ cho input */
+    padding: 15px;
+    font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 3px;
 }
@@ -67,28 +78,26 @@ input[type="password"] {
 
 .toggle-password {
     position: relative;
-    right: 40px; /* Điều chỉnh vị trí của biểu tượng */
+    right: 40px;
     top: -32px;
     cursor: pointer;
     user-select: none;
     color: #777;
-    font-size: 18px; /* Tăng kích thước biểu tượng */
+    font-size: 18px;
 }
 
 .submit-button {
     background-color: #445a77;
     color: white;
-    padding: 15px 30px; /* Tăng kích thước nút */
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     display: block;
-    margin-left: auto; /* Đẩy nút sang bên phải */
+    margin: 20px auto 0; /* Căn giữa nút */
+}
     </style>
-</head>
-
-<body>
     <form class="registration-form">
         <div class="form-row">
             <div class="form-group">
@@ -112,11 +121,4 @@ input[type="password"] {
         </div>
         <button type="submit" class="submit-button">SUBMIT</button>
     </form>
-
-    <!-- Include Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+@endsection
