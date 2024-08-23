@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/home'); // Chuyển hướng đến trang /home
 });
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('auth.home');
 });
 
@@ -39,4 +39,13 @@ Route::get('/network_system', function () {
 });
 Route::get('/user_manual', function () {
     return view('auth.user_manual'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
+});
+Route::get('/tramsac', function () {
+    return view('auth.tramsac'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
+});
+Route::get('/news', function () {
+    return view('auth.news'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
+});
+Route::get('/introduce', function () {
+    return view('auth.introduce'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
 });
