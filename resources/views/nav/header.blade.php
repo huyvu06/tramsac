@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Home')</title> <!-- Hiển thị tiêu đề động -->
     <!-- Include Bootstrap CSS -->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sign.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/network_system.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user_manual.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -15,7 +18,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #a6df4c;">
         <a href="./home"><img src="../images/logo.jpg" alt="" style="width: 80px; height:80px"></a>
         
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Giới Thiệu </a>
