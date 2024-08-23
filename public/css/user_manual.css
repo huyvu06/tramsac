@@ -1,0 +1,14 @@
+.step-container {
+    margin-bottom: 30px;
+}
+.step-img {
+    max-width: 100%;
+    height: auto;
+}
+/* Alternating layout */
+.step-odd {
+    padding-right: 0;
+}
+.step-even {
+    padding-left: 0;
+}
