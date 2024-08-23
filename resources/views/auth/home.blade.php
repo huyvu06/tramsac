@@ -4,79 +4,79 @@
 
 <style>
     .main-banner {
-        background-color: #d4f4d4;
-        padding: 20px;
-        margin-top:10px;
+    background-color: #d4f4d4;
+    padding: 20px;
+    margin-top:10px;
+    margin-bottom: 30px;
+}
+.main-banner img {
+    max-width: 100%;
+    height: auto;
+}
+.step-container {
         margin-bottom: 30px;
+        margin-top: 25px;
     }
-    .main-banner img {
+    .step-img {
         max-width: 100%;
         height: auto;
     }
-    .step-container {
-            margin-bottom: 30px;
-            margin-top: 25px;
-        }
-        .step-img {
-            max-width: 100%;
-            height: auto;
-        }
-        /* Alternating layout */
-        .step-odd {
-            padding-right: 0;
-        }
-        .step-even {
-            padding-left: 0;
-        }
-    .support-section {
-        background-color: #f4f4f4;
-        padding: 20px;
-        margin-top:10px;
-        border-radius: 8px;
+    /* Alternating layout */
+    .step-odd {
+        padding-right: 0;
     }
-    .support-section img {
-        max-width: 100%;
-        height: auto;
+    .step-even {
+        padding-left: 0;
     }
-    /* FAQ CSS */
-    .faq-section ul {
-        list-style-type: none;
-        padding: 0;
-    }
+.support-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top:10px;
+    border-radius: 8px;
+}
+.support-section img {
+    max-width: 100%;
+    height: auto;
+}
+/* FAQ CSS */
+.faq-section ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    .faq-section li {
-        margin-bottom: 15px;
-        cursor: pointer;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: #fff;
-        position: relative;
-    }
+.faq-section li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+}
 
-    .faq-section .answer {
-        display: none; /* Ẩn câu trả lời mặc định */
-        padding: 10px;
-        border-top: 1px solid #ddd;
-        margin-top: 10px;
-    }
+.faq-section .answer {
+    display: none; /* Ẩn câu trả lời mặc định */
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
 
-    .faq-section .toggle-icon {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        font-size: 16px;
-        color: #555;
-        transition: transform 0.3s ease;
-    }
+.faq-section .toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 16px;
+    color: #555;
+    transition: transform 0.3s ease;
+}
 
-    .faq-section .toggle-icon.open {
-        transform: rotate(180deg);
-    }
+.faq-section .toggle-icon.open {
+    transform: rotate(180deg);
+}
 </style>
 
 <!-- Main Banner Section -->
-<div class="container main-banner">
+<div class="container-fluid  main-banner">
     <div class="row">
         <div class="col-md-8">
             <h2>Trạm Sạc Điện Thông Minh – Tiện Lợi Cho Khách Hàng, Cơ Hội Cho Nhà Đầu Tư</h2>
@@ -90,7 +90,7 @@
 </div>
 
 <!-- Steps Section -->
-<div class="container steps">
+<div class="container center steps">
         <h3 class="text-center">Hướng Dẫn Sử Dụng</h3>
         
         <div class="row step-container">
