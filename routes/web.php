@@ -15,37 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route cho trang chủ
-// Route::get('/', function () {
-//     return view('nav.header'); // Đảm bảo rằng bạn có view 'home.blade.php' trong thư mục resources/views
-// });
 Route::get('/', function () {
     return redirect('/home'); // Chuyển hướng đến trang /home
 });
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('auth.home');
 });
 
-// Route cho trang đăng nhập
-Route::get('/login', function () {
-    return view('auth.login'); // Đảm bảo rằng bạn có view 'login.blade.php' trong thư mục resources/views/auth
-});
-
-// Route cho trang đăng ký
-Route::get('/sign', function () {
-    return view('auth.sign'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
-});
-Route::get('/network_system', function () {
-    return view('auth.network_system'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
-});
-Route::get('/user_manual', function () {
-    return view('auth.user_manual'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
-});
-Route::get('/tramsac', function () {
-    return view('auth.tramsac'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
-});
-Route::get('/news', function () {
-    return view('auth.news'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
-});
-Route::get('/introduce', function () {
-    return view('auth.introduce'); // Đảm bảo rằng bạn có view 'register.blade.php' trong thư mục resources/views/auth
+// Group routes for other pages but without 'auth' prefix in the URL
+Route::group(['as' => 'auth.'], function () {
+    Route::view('/login', 'auth.login')->name('login');
+    Route::view('/sign', 'auth.sign')->name('sign');
+    Route::view('/network_system', 'auth.network_system')->name('network_system');
+    Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
+    Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
+    Route::view('/news', 'auth.news')->name('news');
+    Route::view('/introduce', 'auth.introduce')->name('introduce');
 });
