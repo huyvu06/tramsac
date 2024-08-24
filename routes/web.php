@@ -30,5 +30,6 @@ Route::group(['as' => 'auth.'], function () {
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
     Route::view('/news', 'auth.news')->name('news');
+    Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
 });

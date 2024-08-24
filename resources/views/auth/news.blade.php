@@ -47,7 +47,7 @@
                         <div class="card">
                             <img src="../images/tram-sac-2.jpg" class="card-img-top" alt="News Image 1">
                             <div class="card-body">
-                                <h5 class="card-title">VinFast tham dự EVS35</h5>
+                                <h5 class="card-title"><a href="./details">VinFast tham dự EVS35</a></h5>
                                 <p class="card-text">Ra mắt VF 8 và VF 9 tại Châu Âu.</p>
                                 <a href="#" class="btn btn-primary">Read More</a>
                             </div>
