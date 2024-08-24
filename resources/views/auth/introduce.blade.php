@@ -3,102 +3,90 @@
 @section('content')
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
+    .header-image {
+    background-image: url('../images/tram-sac-8.jpg');
+    background-size: cover; /* Thay đổi từ cover thành contain nếu bạn muốn giữ nguyên tỷ lệ ảnh */
+    background-position: center;
+    background-repeat: no-repeat; /* Đảm bảo ảnh không bị lặp */
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+    .header-image h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
     }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .header {
-        background-image: url('your-image-url.jpg');
-        /* Thay thế bằng URL hình ảnh của bạn */
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        height: 400px;
-        /* Chiều cao của phần header */
-        color: white;
-        width: 100%;
-    }
-
-    .overlay {
+    .content-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Màu nền mờ */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .header h1 {
-        font-size: 48px;
-        margin: 0;
-    }
-
-    .header h2 {
-        font-size: 36px;
-        margin: 10px 0 0;
-    }
-
-    .header p {
-        font-size: 18px;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .footer {
-        background-color: #00bcd4;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
         color: white;
         padding: 20px;
     }
-
-    .footer h3 {
-        margin: 0 0 10px;
+    .principles {
+        background-color: #0be7f1;
+        color: red;
+        text-align: center;
+        padding: 20px;
+        margin-top: -20px;
     }
-
-    .footer ul {
-        list-style-type: none;
-        padding: 0;
+    .principles h2 {
+        margin-bottom: 0;
     }
-
-    .footer li {
-        font-size: 18px;
-        margin: 5px 0;
+    .map {
+        background-color: #8ff76e;
+        padding: 20px;
+        
+        text-align: center;
+    }
+    .map iframe {
+        width: 50%;
+        height: 300px;
+        border: none;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
     }
 </style>
-</head>
 
-<div class="container">
-    <div class="header">
-        <div class="overlay">
-            <h1>GIỚI THIỆU VỀ</h1>
-            <h2>trạm sạc</h2>
-            <p>Chương trình này sẽ giới thiệu về trạm sạc điện cho xe hơi như Audi, BMW, Porsche, Land Rover,
-                Jaguar, Rolls-Royce, Tesla... Về cách thức hoạt động, lợi ích và các thông tin liên quan.</p>
+<!-- Header Section with Content Overlay -->
+<div class="header-image">
+    <h1>GIỚI THIỆU VỀ TRẠM SẠC</h1>
+    <div class="content-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Chúng tôi chuyên sửa chữa và bảo hành các dòng xe như: Audi, Acura, BMW, Porsche, Landrover Jaguar, Rolls-Royce, Bentley... Với đội ngũ kỹ thuật viên chuyên nghiệp cùng trang thiết bị hiện đại VIỆN AUTO là trung tâm sửa chữa ô tô uy tín được nhiều khách hàng biết đến trên cả nước.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="footer" style="margin-top: 10px;">
-        <h3>5 TIÊU CHÍ VÀNG</h3>
-        <ul>
-            <li>INNOVATION</li>
-            <li>SUSTAINABLE</li>
-            <li>AGILITY</li>
-            <li>INTEGRITY</li>
-            <li>UNITY</li>
-        </ul>
-    </div>
 </div>
+
+<!-- Principles Section -->
+<div class="principles">
+    <h2>5 TIÊU CHÍ VÀNG</h2>
+    <p>INNOVATION - SUSTAINABLE - AGILITY - INTEGRITY - UNITY</p>
+    <p>SÁNG TẠO - BỀN VỮNG - LINH HOẠT - LIÊM CHÍNH - ĐOÀN KẾT</p>
+</div>
+
+<!-- Map Section -->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4226764426547!2d106.69305671480025!3d10.775653692321214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752929258a7b0d%3A0xf472d71e62b36261!2sTo%C3%A0%20nh%C3%A0%20V%C4%83n%20ph%C3%B2ng%20Symphony%20Office%20Building!5e0!3m2!1svi!2s!4v1598412023327!5m2!1svi!2s"></iframe>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>Copyright 2024 © Trạm Sạc</p>
+</footer>
+
 @endsection

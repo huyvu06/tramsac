@@ -2,164 +2,85 @@
 @section('title', 'News')
 @section('content')
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    .main-content {
-        max-width: 1200px;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    .top-section {
-        position: relative;
-        color: white;
-        text-align: left;
-    }
-
-    .date-box {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: #3498db;
-        padding: 10px;
-        font-size: 18px;
-        text-align: center;
-        line-height: 1.2;
-        font-weight: bold;
-        color: white;
-    }
-
-    .background-image {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .overlay {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-    }
-
-    .overlay h2 {
-        margin: 0;
-        font-size: 24px;
-    }
-
-    .overlay p {
-        margin: 10px 0;
-    }
-
-    .continue-button {
-        display: inline-block;
-        padding: 10px 20px;
-        color: white;
-        background-color: #3498db;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    .bottom-section {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-        background-color: white;
-    }
-
-    .post {
-        display: flex;
-        width: 60%;
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-radius: 8px;
-        margin-right: 20px;
-    }
-
-    .date-box-small {
-        background-color: #3498db;
-        padding: 5px;
-        font-size: 14px;
-        font-weight: bold;
-        text-align: center;
-        margin-right: 10px;
-        color: white;
-    }
-
-    .post-image {
-        width: 80px;
-        height: 80px;
-        margin-right: 10px;
-        border-radius: 4px;
-    }
-
-    .post-details h3 {
-        margin: 0;
-        font-size: 18px;
-    }
-
-    .recent-posts {
-        width: 30%;
-    }
-
-    .recent-posts h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .recent-posts ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .recent-posts ul li {
-        margin-bottom: 10px;
-    }
-
-    .recent-posts ul li a {
-        text-decoration: none;
-        color: #3498db;
-    }
-
-    .recent-posts ul li a:hover {
-        text-decoration: underline;
+    /* Giới hạn chiều cao của hình ảnh trong carousel */
+    .carousel-inner img {
+        max-height: 400px; /* Điều chỉnh giá trị này tùy theo nhu cầu của bạn */
+        object-fit: cover; /* Giữ tỷ lệ khung hình của ảnh và cắt phần thừa nếu cần */
     }
 </style>
-<div class="main-content">
-    <div class="top-section">
-        <div class="date-box">18<br>Th7</div>
-        <img src="image.png" alt="Hyundai Car" class="background-image">
-        <div class="overlay">
-            <h2>Hyundai dừng phân phối dòng xe Kona tại Việt Nam</h2>
-            <p>Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về [...]</p>
-            <a href="#" class="continue-button">CONTINUE READING →</a>
-        </div>
-    </div>
-
-    <div class="bottom-section">
-        <div class="post">
-            <div class="date-box-small">18<br>Th7</div>
-            <img src="charging.png" alt="Charging Station" class="post-image">
-            <div class="post-details">
-                <h3>VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</h3>
-                <p>Hội nghị và Triển lãm Xe điện Quốc Tế là sự kiện nổi tiếng và [...]</p>
+<div id="newsCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../images/tram-sac-12.jpg" class="d-block w-100" alt="Image 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</h5>
+                    <p>Hội nghị và Triển lãm Xe điện Quốc Tế là sự kiện nổi tiếng và...</p>
+                    <a href="#" class="btn btn-light">Continue Reading</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../images/tram-sac-11.jpg" class="d-block w-100" alt="Image 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Hyundai dừng phân phối dòng xe Kona tại Việt Nam</h5>
+                    <p>Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...</p>
+                    <a href="#" class="btn btn-light">Continue Reading</a>
+                </div>
             </div>
         </div>
-        <div class="recent-posts">
-            <h3>Bài viết mới</h3>
-            <ul>
-                <li><a href="#">VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</a></li>
-                <li><a href="#">Hyundai dừng phân phối dòng xe Kona tại Việt Nam</a></li>
-            </ul>
+        <a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- News List -->
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="../images/tram-sac-2.jpg" class="card-img-top" alt="News Image 1">
+                            <div class="card-body">
+                                <h5 class="card-title">VinFast tham dự EVS35</h5>
+                                <p class="card-text">Ra mắt VF 8 và VF 9 tại Châu Âu.</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img src="../images/tram-sac-5.jpg" class="card-img-top" alt="News Image 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Hyundai dừng phân phối dòng xe Kona</h5>
+                                <p class="card-text">Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Posts Sidebar -->
+            <div class="col-md-4">
+                <h5>Bài viết mới</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#">VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">Hyundai dừng phân phối dòng xe Kona tại Việt Nam</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">Chào tất cả mọi người!</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 @endsection
