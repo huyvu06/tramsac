@@ -4,17 +4,13 @@
 
 @section('content')
 <style>
-    body {
+     body {
         font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
         background-color: #f5f5f5;
     }
-
     .container {
+        margin-top: 15px;
         background-color: white;
         border-radius: 20px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

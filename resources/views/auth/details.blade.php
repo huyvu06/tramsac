@@ -1,5 +1,5 @@
 @extends('nav.header')
-@section('title', 'News')
+@section('title', 'Chi tiết')
 @section('content')
 
 <div class="container mt-4">
