@@ -1,136 +1,211 @@
 @extends('nav.header')
+
 @section('title', 'Login')
+
 @section('content')
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f8f8f8;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0;
+        background-color: #f5f5f5;
     }
 
-    .login-form-container {
+    .container {
         background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        width: 800px;
+        overflow: hidden;
         padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 600px;
+    }
+
+    .image-container {
+        flex: 1;
+        padding-right: 40px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-container {
+        flex: 1;
+    }
+
+    h1 {
+        padding-left: 120px;
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #333;
     }
 
     .form-group {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         position: relative;
     }
 
-    label {
-        font-weight: bold;
-        margin-bottom: 18px;
-        font-size: 18px;
-    }
-
-    .required {
-        color: red;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        width: 100%;
-        padding: 15px;
-        font-size: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    input[type="checkbox"] {
-        margin-right: 5px;
-    }
-
-    .toggle-password {
-        position: absolute;
-        right: 15px;
-        top: 45px;
-        cursor: pointer;
-        user-select: none;
-        color: #777;
-        font-size: 20px;
-    }
-
-    .submit-button {
-        background-color: #7ed321;
-        color: white;
-        padding: 15px 0;
+    .form-group input {
+        width: 76%;
+        padding: 10px 40px 10px 40px;
+        /* Padding for left and right icons */
         border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 18px;
-        width: 150px;
-        float: right;
-    }
-
-    .submit-button:hover {
-        background-color: #6cb51f;
-    }
-
-    .forgot-password,
-    .register-link {
+        border-bottom: 1px solid #ddd;
+        outline: none;
         font-size: 16px;
-        color: #555;
-        text-decoration: none;
-        display: block;
-        margin-top: 10px;
     }
 
-    .forgot-password:hover,
-    .register-link:hover {
-        text-decoration: underline;
+    .form-group input::placeholder {
+        color: #999;
+    }
+
+    .form-group i {
+        position: absolute;
+        top: 12px;
+        color: #999;
+    }
+
+    .form-group .fa-user {
+        left: 10px;
+        /* Position icon on the left */
+    }
+
+    .form-group .fa-lock {
+        left: 10px;
+        /* Position icon on the left */
+    }
+
+    .form-group .fa-eye {
+        right: 10px;
+        /* Position eye icon on the right */
+        cursor: pointer;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .checkbox-group input {
+        margin-right: 10px;
+    }
+
+    .checkbox-group label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    button {
+        background-color: #7cb9e8;
+        color: white;
+        border: none;
+        padding: 12px 0;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .create-account {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .create-account a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .social-login {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .social-login span {
+        font-size: 14px;
+        color: #666;
+        margin-right: 10px;
+    }
+
+    .social-icons {
+        display: inline-block;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 5px;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        font-size: 14px;
+    }
+
+    .facebook {
+        background-color: #3b5998;
+    }
+
+    .twitter {
+        background-color: #1da1f2;
+    }
+
+    .google {
+        background-color: #db4437;
     }
 </style>
 
 <div class="container">
-    <div class="login-form-container">
-        <form class="login-form">
+    <div class="image-container">
+    <img src="{{asset('images/login.jpg')}}" alt="Person working on laptop">
+    </div>
+    <div class="form-container">
+        <h1>Sign up</h1>
+        <form>
             <div class="form-group">
-                <label for="username">Username or Email <span class="required">*</span></label>
-                <input type="text" id="username" name="username" required>
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-                <label for="password">Password <span class="required">*</span></label>
-                <input type="password" id="password" name="password" required>
-                <span class="material-icons toggle-password" onclick="togglePasswordVisibility()">visibility</span>
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
             </div>
-            <div class="form-group">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember Me</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember" required>
+                <label for="remember">Remember me</label>
             </div>
-            <div class="form-group">
-                <a href="#" class="forgot-password">Lost your password?</a>
-            </div>
-            <div class="form-group">
-                <a href="#" class="register-link">Not a member yet? Register now.</a>
-            </div>
-            <button type="submit" class="submit-button">LOGIN</button>
+            <button type="submit">Log in</button>
         </form>
+        <div class="create-account">
+            <a href="#">Create an account</a>
+        </div>
+        <div class="social-login">
+            <span>Or login with</span>
+            <div class="social-icons">
+                <a href="#" class="facebook">f</a>
+                <a href="#" class="twitter">t</a>
+                <a href="#" class="google">G</a>
+            </div>
+        </div>
     </div>
 </div>
-
 <script>
-    function togglePasswordVisibility() {
+    function togglePassword() {
         const passwordField = document.getElementById('password');
-        const toggleIcon = document.querySelector('.toggle-password');
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            toggleIcon.textContent = 'visibility_off';
-        } else {
-            passwordField.type = 'password';
-            toggleIcon.textContent = 'visibility';
-        }
+        const toggleIcon = passwordField.nextElementSibling;
+        const type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+        toggleIcon.classList.toggle('fa-eye-slash');
     }
 </script>
 @endsection

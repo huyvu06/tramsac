@@ -4,166 +4,147 @@
 
 @section('content')
 <style>
-    /* Đảm bảo rằng body chiếm toàn bộ chiều cao của viewport */
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f8f8;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    /* Căn giữa form trong khu vực còn lại của viewport */
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        margin-top: 80px; /* Khoảng cách từ navbar xuống, điều chỉnh nếu cần */
-    }
-
-    /* Định dạng form */
-    .registration-form {
-        background-color: white;
-        padding: 30px;
-        margin: 10% 20% 0 30%;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 700px; /* Có thể điều chỉnh kích thước của form */
-        max-width: 100%; /* Đảm bảo form không vượt quá kích thước của viewport */
-    }
-
-    /* Định dạng hàng và nhóm trong form */
-    .form-row {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .form-group {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        margin-right: 20px;
-        position: relative; /* Đặt position relative để định vị icon */
-    }
-
-    .form-group:last-child {
-        margin-right: 0;
-    }
-
-    label {
-        font-weight: bold;
-        margin-bottom: 8px;
-        font-size: 16px;
-    }
-
-    .required {
-        color: red;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        padding: 15px;
-        font-size: 16px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        width: 100%; /* Đảm bảo input chiếm toàn bộ chiều rộng */
-    }
-
-    input[type="password"] {
-        padding-right: 40px; /* Thêm khoảng trống cho icon */
-    }
-
-    .toggle-password {
-        position: absolute;
-        right: 15px;
-        top: 38px;
-        cursor: pointer;
-        user-select: none;
-        color: #777;
-        font-size: 18px;
-    }
-
-    .submit-button {
-        background-color: #445a77;
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        display: block;
-        margin: 20px auto 0; /* Căn giữa nút */
-    }
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            width: 800px;
+            overflow: hidden;
+        }
+        .form-container {
+            flex: 1;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+            padding-left: 100px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group input {
+            width: 95%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            font-size: 16px;
+        }
+        .form-group input::placeholder {
+            color: #999;
+        }
+        .form-group i {
+            position: absolute;
+            top: 12px;
+            color: #999;
+        }
+        .form-group .toggle-password {
+            right: 0px;
+            top: 12px;
+            cursor: pointer;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        input{
+          margin-left: 20px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .checkbox-group label {
+            font-size: 14px;
+            color: #666;
+        }
+        button {
+            background-color: #7cb9e8;
+            color: white;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .image-container {
+            flex: 1;
+            text-align: center;
+            padding: 20px 40px 0 40px; /* Adjusted padding to give 40px margin */
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .login-link a {
+            color: #7cb9e8;
+            text-decoration: none;
+        }
 </style>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Function to prevent TypeScript code input
-        function preventCodeInput(event) {
-            // Regex pattern to detect TypeScript code (e.g., keywords, symbols)
-            const forbiddenPatterns = /<|>|{|}|\(|\)|\[|\]|\/|\\|function|var|let|const|import|export|class/;
-            
-            if (forbiddenPatterns.test(event.target.value)) {
-                event.preventDefault();
-                event.target.value = event.target.value.replace(forbiddenPatterns, '');
-                alert('You cannot enter TypeScript code.');
-            }
+<div class="container">
+        <div class="form-container">
+            <h1>Sign up</h1>
+            <form>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="repeat-password" placeholder="Repeat your password" required>
+                    <i class="fas fa-eye toggle-password "  onclick="togglePassword('repeat-password')"></i>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree all statements in <a href="#">Terms of service</a></label>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="{{asset('images/register.jpg')}}" alt="Sign up image">
+            <div class="login-link">
+                <a href="#">I am already member</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword(id = 'password') {
+            const passwordField = document.getElementById(id);
+            const toggleIcon = passwordField.nextElementSibling;
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            toggleIcon.classList.toggle('fa-eye-slash');
         }
-
-        // Get the input fields
-        const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
-        
-        // Add event listeners to each input field
-        inputs.forEach(input => {
-            input.addEventListener('input', preventCodeInput);
-        });
-
-        // Toggle password visibility
-        const toggleIcons = document.querySelectorAll('.toggle-password');
-        toggleIcons.forEach(icon => {
-            icon.addEventListener('click', function () {
-                const input = icon.previousElementSibling;
-                if (input.type === 'password') {
-                    input.type = 'text';
-                    icon.textContent = '🙈'; // Icon when password is visible
-                } else {
-                    input.type = 'password';
-                    icon.textContent = '👁️'; // Icon when password is hidden
-                }
-            });
-        });
-    });
-</script>
-
-<div class="content">
-    <form class="registration-form">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="username">Username <span class="required">*</span></label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="email">User Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="password">User Password <span class="required">*</span></label>
-                <input type="password" id="password" name="password" required>
-                <span class="toggle-password">👁️</span>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password <span class="required">*</span></label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                <span class="toggle-password">👁️</span>
-            </div>
-        </div>
-        <button type="submit" class="submit-button">SUBMIT</button>
-    </form>
-</div>
+    </script>
 @endsection
