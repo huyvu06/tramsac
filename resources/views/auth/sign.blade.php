@@ -3,123 +3,157 @@
 @section('title', 'sign')
 
 @section('content')
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5f5f5;
+    }
 
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px; /* Thêm khoảng cách ở phần trên và dưới để tránh lỗi hiển thị */
+    }
 
+    .container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        width: 100%;
+        max-width: 900px;
+        overflow: hidden;
+        flex-direction: row; /* Căn chỉnh mặc định thành hàng ngang */
+    }
+
+    .form-container {
+        flex: 1;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px 35px; /* Thêm khoảng trống cho icon */
+        border: none;
+        border-bottom: 2px solid #ddd;
+        outline: none;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .form-group input::placeholder {
+        color: #999;
+    }
+
+    .form-group i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: #999;
+    }
+
+    .form-group .toggle-password {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #999;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .checkbox-group input {
+        margin-right: 10px;
+    }
+
+    .checkbox-group label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    button {
+        background-color: #7cb9e8;
+        color: white;
+        border: none;
+        padding: 12px 0;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #66a5cc;
+    }
+
+    .image-container {
+        flex: 1;
+        text-align: center;
+        padding: 20px 40px 0 40px;
+        background-color: #f0f0f0;
+        border-radius: 0 10px 10px 0;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .login-link a {
+        color: #7cb9e8;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            width: 800px;
-            overflow: hidden;
-        }
-
-        .form-container {
-            flex: 1;
-            padding: 40px;
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 30px;
-            color: #333;
-            padding-left: 100px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .form-group input {
-            width: 95%;
-            padding: 10px 0;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            outline: none;
-            font-size: 16px;
-        }
-
-        .form-group input::placeholder {
-            color: #999;
-        }
-
-        .form-group i {
-            position: absolute;
-            top: 12px;
-            color: #999;
-        }
-
-        .form-group .toggle-password {
-            right: 0px;
-            top: 12px;
-            cursor: pointer;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        input {
-            margin-left: 20px;
-        }
-
-        .checkbox-group input {
-            margin-right: 10px;
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            color: #666;
-        }
-
-        button {
-            background-color: #7cb9e8;
-            color: white;
-            border: none;
-            padding: 12px 0;
-            width: 100%;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
+            flex-direction: column; /* Thay đổi thành cột trên màn hình nhỏ */
+            max-width: 100%;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .image-container {
-            flex: 1;
-            text-align: center;
-            padding: 20px 40px 0 40px;
+            border-radius: 0;
+            padding: 20px;
         }
 
-        .image-container img {
-            width: 100%;
-            border-radius: 10px;
+        .form-container {
+            padding: 20px;
         }
-
-        .login-link {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .login-link a {
-            color: #7cb9e8;
-            text-decoration: none;
-        }
+    }
     </style>
 
     <!-- Main Content Section -->

@@ -18,7 +18,6 @@
     .main-banner {
         background-color: #d4f4d4;
         padding: 20px;
-        margin-top: 10px;
         margin-bottom: 30px;
     }
 
@@ -110,10 +109,10 @@
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 
     }
-    .text-center{
+
+    .text-center {
         margin: 15px 50px;
     }
-
 </style>
 
 @section('content')
@@ -271,11 +270,11 @@
         <!-- Content for this section can be added as needed -->
     </div>
 
-    <!-- Map Section -->
+    {{-- <!-- Map Section -->
     <div class="container map-section text-center">
         <iframe src="your-google-map-embed-url" width="600" height="450" frameborder="0" style="border:0;"
             allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
+    </div> --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

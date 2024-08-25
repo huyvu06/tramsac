@@ -41,6 +41,26 @@
         .dropdown-menu .dropdown-item {
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        .map {
+            padding-top: 20px ;
+            background-color: #8ff76e;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .map iframe {
+            width: 50%;
+            height: 300px;
+            border: none;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -53,8 +73,9 @@
         <div class="collapse navbar-collapse " id="collapsibleNavId">
             <ul class="navbar-nav mr-auto ms-3 mt-2 mt-lg-0 py-1">
                 <li class="nav-item dropdown px-3">
-                    <a class="nav-link dropdown-toggle" href="{{ asset('introduce') }}" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Giới Thiệu </a>
+                    <a class="nav-link dropdown-toggle" href="{{ asset('introduce') }}" id="dropdownId"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Giới
+                        Thiệu </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('introduce') }}"> Về chúng tôi </a>
                         <a class="dropdown-item" href="{{ asset('news') }}"> Tin tức </a>
@@ -62,8 +83,9 @@
                 </li>
 
                 <li class="nav-item dropdown pr-3">
-                    <a class="nav-link dropdown-toggle" href="{{ asset('network_system') }}" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành cho khách hàng </a>
+                    <a class="nav-link dropdown-toggle" href="{{ asset('network_system') }}" id="dropdownId"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành
+                        cho khách hàng </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('network_system') }}"> Hệ Thống Mạng Lưới </a>
                         <a class="dropdown-item" href="{{ asset('user_manual') }}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
@@ -71,8 +93,9 @@
                 </li>
 
                 <li class="nav-item dropdown pr-3">
-                    <a class="nav-link dropdown-toggle" href="{{ asset('tramsac') }}" id="dropdownId" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành Cho Đối Tác </a>
+                    <a class="nav-link dropdown-toggle" href="{{ asset('tramsac') }}" id="dropdownId"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành
+                        Cho Đối Tác </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('#') }}"> Giải Pháp Quản Lý </a>
                         <a class="dropdown-item" href="{{ asset('tramsac') }}"> Đăng Ký Trạm Sạc </a>
@@ -110,6 +133,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     @yield('content')
+    <!-- Map Section -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8856.147389309785!2d105.91165358341146!3d21.050632440496003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a9a0a78b480b%3A0xde012606025bd95e!2zVG_DoCBuaMOgIFbEg24gcGjDsm5nIFN5bXBob255!5e0!3m2!1svi!2s!4v1724589525756!5m2!1svi!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <p>Copyright 2024 © Trạm Sạc</p>
+    </footer>
 
 </body>
 

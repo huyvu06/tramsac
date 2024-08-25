@@ -6,51 +6,55 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-
 
         .container {
             width: 100%;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f4f4f4;
+            padding: 20px;
         }
 
         .form-container {
             width: 100%;
             max-width: 500px;
-            /* Giảm kích thước của form */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background: #fff;
-            /* Thay đổi nền thành trắng để nổi bật hơn */
-        }
-
-        .form-container h1 {
-            margin-bottom: 20px;
-            font-size: 10px;
-            /* Giảm kích thước tiêu đề */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
             text-align: center;
         }
 
+        .form-container h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #555;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
         }
 
         .form-group textarea {
@@ -59,17 +63,42 @@
 
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #007bff;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        /* Responsive cho màn hình nhỏ */
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .form-container h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 15px;
+            }
         }
     </style>
 

@@ -6,12 +6,11 @@
         .header-image {
             background-image: url('../images/tram-sac-8.jpg');
             background-size: cover;
-            /* Thay đổi từ cover thành contain nếu bạn muốn giữ nguyên tỷ lệ ảnh */
+            /* Giữ tỷ lệ ảnh để bao phủ toàn bộ phần nền */
             background-position: center;
             background-repeat: no-repeat;
-            /* Đảm bảo ảnh không bị lặp */
             height: 500px;
-            color: white;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,48 +22,51 @@
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            /* Thêm đổ bóng để tăng độ rõ ràng */
         }
 
         .content-overlay {
             position: absolute;
             bottom: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent background */
-            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            /* Tăng độ tối cho nền */
+            color: #fff;
             padding: 20px;
+            box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.5);
+            /* Tạo hiệu ứng đổ bóng mềm mại cho phần overlay */
+        }
+
+        .content-overlay p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            /* Tăng khoảng cách dòng để nội dung dễ đọc hơn */
         }
 
         .principles {
-            background-color: #0be7f1;
-            color: red;
+            background-color: #00bcd4;
+            /* Màu xanh dương nhạt để tạo cảm giác chuyên nghiệp */
+            color: #fff;
             text-align: center;
             padding: 20px;
             margin-top: -20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            /* Tạo bóng nhẹ để phần này nổi bật */
         }
 
         .principles h2 {
-            margin-bottom: 0;
+            margin-bottom: 10px;
+            /* Tạo khoảng cách giữa tiêu đề và đoạn văn */
+            font-size: 2rem;
+            text-transform: uppercase;
+            /* Chuyển tiêu đề sang chữ in hoa */
         }
 
-        .map {
-            background-color: #8ff76e;
-            padding: 20px;
-
-            text-align: center;
-        }
-
-        .map iframe {
-            width: 50%;
-            height: 300px;
-            border: none;
-        }
-
-        footer {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            text-align: center;
+        .principles p {
+            margin: 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
     </style>
 
@@ -90,16 +92,5 @@
         <p>INNOVATION - SUSTAINABLE - AGILITY - INTEGRITY - UNITY</p>
         <p>SÁNG TẠO - BỀN VỮNG - LINH HOẠT - LIÊM CHÍNH - ĐOÀN KẾT</p>
     </div>
-
-    <!-- Map Section -->
-    <div class="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4226764426547!2d106.69305671480025!3d10.775653692321214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752929258a7b0d%3A0xf472d71e62b36261!2sTo%C3%A0%20nh%C3%A0%20V%C4%83n%20ph%C3%B2ng%20Symphony%20Office%20Building!5e0!3m2!1svi!2s!4v1598412023327!5m2!1svi!2s"></iframe>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>Copyright 2024 © Trạm Sạc</p>
-    </footer>
 
 @endsection

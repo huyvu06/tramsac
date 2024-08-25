@@ -20,6 +20,10 @@
         .step-even {
             padding-left: 0;
         }
+
+        .text-center {
+            padding: 40px;
+        }
     </style>
 
     <!-- Steps Section -->
@@ -47,35 +51,22 @@
         </div>
 
         <div class="row step-container">
+            
             <div class="col-md-6 step-odd text-right">
                 <h4>Bước 3:</h4>
                 <p>Đăng Nhập</p>
             </div>
             <div class="col-md-6">
                 <img src="../images/tram-sac-7.jpg" class="step-img" alt="Step 3">
-            </div>
-        </div>
-        <div class="row step-container">
-            <div class="col-md-6 order-md-2 step-even text-left">
-                <h4>Bước 2:</h4>
-                <p>Đăng Ký</p>
-            </div>
-            <div class="col-md-6 order-md-1">
-                <img src="../images/tram-sac-5.jpg" class="step-img" alt="Step 2">
             </div>
         </div>
 
-        <div class="row step-container">
-            <div class="col-md-6 step-odd text-right">
-                <h4>Bước 3:</h4>
-                <p>Đăng Nhập</p>
-            </div>
-            <div class="col-md-6">
-                <img src="../images/tram-sac-7.jpg" class="step-img" alt="Step 3">
-            </div>
-        </div>
         <div class="text-center">
-            <a href="#" class="btn btn-success">Tải App Ngay</a>
+            <a href="#" class="btn btn-success"
+                style="margin: 20px;
+        text-align: center;box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        margin: 10px;">Tải
+                App Ngay</a>
         </div>
     </div>
 @endsection

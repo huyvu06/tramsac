@@ -5,9 +5,81 @@
         /* Giới hạn chiều cao của hình ảnh trong carousel */
         .carousel-inner img {
             max-height: 400px;
-            /* Điều chỉnh giá trị này tùy theo nhu cầu của bạn */
             object-fit: cover;
-            /* Giữ tỷ lệ khung hình của ảnh và cắt phần thừa nếu cần */
+            width: 100%;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1.1rem;
+        }
+
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%);
+
+        }
+
+
+        .list-group-item {
+            border: none;
+            padding: 10px 0;
+        }
+
+
+        .list-group-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .list-group-item a:hover {
+            text-decoration: underline;
+        }
+
+
+        .card {
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .card-title a:hover {
+            text-decoration: underline;
+            color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .col-md-8 .row .col-md-6 {
+            margin-bottom: 30px;
         }
     </style>
     <div id="newsCarousel" class="carousel slide" data-ride="carousel">
