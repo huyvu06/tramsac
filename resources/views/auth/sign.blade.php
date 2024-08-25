@@ -62,7 +62,7 @@
     .form-group i {
         position: absolute;
         top: 50%;
-        left: 10px;
+        /* left: 10px; */
         transform: translateY(-50%);
         color: #999;
     }
