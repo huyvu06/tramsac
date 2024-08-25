@@ -5,85 +5,89 @@
 @section('content')
     <style>
         /* Đảm bảo rằng body có khoảng cách đủ để tránh bị che khuất bởi navbar */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    /* Thêm padding-top để tạo khoảng cách cho thanh navbar */
-     /* Điều chỉnh khoảng cách tùy thuộc vào chiều cao của navbar */
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            /* Thêm padding-top để tạo khoảng cách cho thanh navbar */
+            /* Điều chỉnh khoảng cách tùy thuộc vào chiều cao của navbar */
+        }
 
-.container {
-    margin-top:15px;
-    display: flex;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 80%; /* Thêm chiều rộng cho container */
-    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-   
-}
+        .container {
+            margin-top: 15px;
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 80%;
+            /* Thêm chiều rộng cho container */
+            max-width: 1200px;
+            /* Giới hạn chiều rộng tối đa */
 
-.map {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        }
 
-.map img {
-    max-width: 100%;
-    height: auto;
-}
+        .map {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.form {
-    flex: 1;
-    padding: 20px;
-}
+        .map img {
+            max-width: 100%;
+            height: auto;
+        }
 
-.form h2 {
-    margin-top: 0;
-    position: relative;
-    padding-bottom: 10px;
-    padding-left: 80px;
-}
+        .form {
+            flex: 1;
+            padding: 20px;
+        }
 
-.form h2::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+        .form h2 {
+            margin-top: 0;
+            position: relative;
+            padding-bottom: 10px;
+            padding-left: 80px;
+        }
 
-.form label {
-    display: block;
-    margin: 10px 0 5px;
-}
+        .form h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
 
-.form input, .form select, .form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        .form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
 
-.form button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+        .form input,
+        .form select,
+        .form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-.form button:hover {
-    background-color: #0056b3;
-}
+        .form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <div class="container">

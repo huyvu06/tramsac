@@ -8,45 +8,80 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .dropdown-menu {
+            background-color: #f9f9f5;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Thêm hiệu ứng đổ bóng nhẹ */
+            right: 0;
+            left: auto;
+            top: 100%;
+            position: absolute;
+            /* Đảm bảo menu có thể được định vị */
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: #707862;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #e8e8e5;
+            color: #50554a;
+        }
+
+        /* Thêm chuyển đổi mượt mà khi hover */
+        .dropdown-menu .dropdown-item {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #a6df4c;">
+    <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: #a6df4c;">
         <a href="./home"><img src="../images/logo.jpg" alt="" style="width: 80px; height:80px"></a>
 
         <div class="collapse navbar-collapse " id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto ms-3 mt-2 mt-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+            <ul class="navbar-nav mr-auto ms-3 mt-2 mt-lg-0 py-1">
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" href="{{ asset('introduce') }}" id="dropdownId" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Giới Thiệu </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="{{asset('introduce')}}"> Về chúng tôi </a>
-                        <a class="dropdown-item" href="{{asset('news')}}"> Tin tức </a>
+                        <a class="dropdown-item" href="{{ asset('introduce') }}"> Về chúng tôi </a>
+                        <a class="dropdown-item" href="{{ asset('news') }}"> Tin tức </a>
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                <li class="nav-item dropdown pr-3">
+                    <a class="nav-link dropdown-toggle" href="{{ asset('network_system') }}" id="dropdownId" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành cho khách hàng </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="{{asset('network_system')}}"> Hệ Thống Mạng Lưới </a>
-                        <a class="dropdown-item" href="{{asset('user_manual')}}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
+                        <a class="dropdown-item" href="{{ asset('network_system') }}"> Hệ Thống Mạng Lưới </a>
+                        <a class="dropdown-item" href="{{ asset('user_manual') }}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                <li class="nav-item dropdown pr-3">
+                    <a class="nav-link dropdown-toggle" href="{{ asset('tramsac') }}" id="dropdownId" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành Cho Đối Tác </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="{{asset('#')}}"> Giải Pháp Quản Lý </a>
-                        <a class="dropdown-item" href="{{asset('tramsac')}}"> Đăng Ký Trạm Sạc </a>
+                        <a class="dropdown-item" href="{{ asset('#') }}"> Giải Pháp Quản Lý </a>
+                        <a class="dropdown-item" href="{{ asset('tramsac') }}"> Đăng Ký Trạm Sạc </a>
                     </div>
                 </li>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Liên Hệ</a>
+                            <a class="nav-link" href="#" style="color: #707862;">Liên Hệ</a>
                         </li>
                     </ul>
                 </div>

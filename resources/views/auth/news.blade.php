@@ -1,14 +1,16 @@
 @extends('nav.header')
 @section('title', 'News')
 @section('content')
-<style>
-    /* Giới hạn chiều cao của hình ảnh trong carousel */
-    .carousel-inner img {
-        max-height: 400px; /* Điều chỉnh giá trị này tùy theo nhu cầu của bạn */
-        object-fit: cover; /* Giữ tỷ lệ khung hình của ảnh và cắt phần thừa nếu cần */
-    }
-</style>
-<div id="newsCarousel" class="carousel slide" data-ride="carousel">
+    <style>
+        /* Giới hạn chiều cao của hình ảnh trong carousel */
+        .carousel-inner img {
+            max-height: 400px;
+            /* Điều chỉnh giá trị này tùy theo nhu cầu của bạn */
+            object-fit: cover;
+            /* Giữ tỷ lệ khung hình của ảnh và cắt phần thừa nếu cần */
+        }
+    </style>
+    <div id="newsCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="../images/tram-sac-12.jpg" class="d-block w-100" alt="Image 1">
@@ -58,7 +60,8 @@
                             <img src="../images/tram-sac-5.jpg" class="card-img-top" alt="News Image 2">
                             <div class="card-body">
                                 <h5 class="card-title">Hyundai dừng phân phối dòng xe Kona</h5>
-                                <p class="card-text">Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...</p>
+                                <p class="card-text">Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...
+                                </p>
                                 <a href="#" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
