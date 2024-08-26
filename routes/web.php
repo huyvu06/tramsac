@@ -22,6 +22,11 @@ Route::get('/home', function () {
     return view('auth.home');
 });
 
+// admin
+Route::prefix('admin')->group(function(){
+
+});
+
 // Group routes for other pages but without 'auth' prefix in the URL
 Route::group(['as' => 'auth.'], function () {
     Route::view('/login', 'auth.login')->name('login');
