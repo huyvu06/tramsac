@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,8 @@ Route::get('/home', function () {
 Route::prefix('admin')->group(function(){
 
 });
+
+Route::post('/sign', [RegisterController::class, 'register']);
 
 // Group routes for other pages but without 'auth' prefix in the URL
 Route::group(['as' => 'auth.'], function () {
