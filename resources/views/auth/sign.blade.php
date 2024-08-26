@@ -161,7 +161,7 @@
         <div class="container">
             <div class="form-container">
                 <h1>Sign up</h1>
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('auth.sign') }}">
                     <div class="form-group">
                         <i class="fas fa-user"></i>
                         <input type="text" placeholder="Your Name" required>

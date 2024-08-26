@@ -115,10 +115,10 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2" href="./login" role="button">Đăng nhập</a>
+                        <a class="btn btn-outline-light mr-2" href="{{route('auth.login')}}" role="button">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light" href="./sign" role="button">Đăng ký</a>
+                        <a class="btn btn-light" href="{{route('auth.sign')}}" role="button">Đăng ký</a>
                     </li>
                 </ul>
             </form>

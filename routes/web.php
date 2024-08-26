@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,24 +17,22 @@ use App\Http\Controllers\Auth\RegisterController;
 
 
 // Route cho trang chủ
-Route::get('/', function () {
-    return redirect('/home'); // Chuyển hướng đến trang /home
-});
-Route::get('/home', function () {
-    return view('auth.home');
-});
+// Route::get('/', function () {
+//     return redirect('/home'); // Chuyển hướng đến trang /home
+// });
+Route::get('/', [HomeController::class, 'Home'])->name('home');
 
 // admin
 Route::prefix('admin')->group(function(){
 
 });
 
-Route::post('/sign', [RegisterController::class, 'register']);
+;
 
 // Group routes for other pages but without 'auth' prefix in the URL
 Route::group(['as' => 'auth.'], function () {
-    Route::view('/login', 'auth.login')->name('login');
-    Route::view('/sign', 'auth.sign')->name('sign');
+    Route::get('/login', [UserController::class,'login'])->name('login');
+    Route::get('/sign', [UserController::class,'sign'])->name('sign');
     Route::view('/network_system', 'auth.network_system')->name('network_system');
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');

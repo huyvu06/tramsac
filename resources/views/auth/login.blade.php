@@ -206,7 +206,7 @@
             <img src="{{ asset('images/login.jpg') }}" alt="Person working on laptop">
         </div>
         <div class="form-container">
-            <h1>Sign up</h1>
+            <h1>Login</h1>
             <form>
                 <div class="form-group">
                     <i class="fas fa-user"></i>
