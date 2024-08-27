@@ -36,7 +36,7 @@
                 <p>Tải app</p>
             </div>
             <div class="col-md-6">
-                <img src="../images/tram-sac-2.jpg" class="step-img" alt="Step 1">
+                <img src="{{asset('images/tram-sac-2.jpg')}}" class="step-img" alt="Step 1">
             </div>
         </div>
 
@@ -46,7 +46,7 @@
                 <p>Đăng Ký</p>
             </div>
             <div class="col-md-6 order-md-1">
-                <img src="../images/tram-sac-5.jpg" class="step-img" alt="Step 2">
+                <img src="{{asset('images/tram-sac-5.jpg')}}" class="step-img" alt="Step 2">
             </div>
         </div>
 
@@ -57,7 +57,7 @@
                 <p>Đăng Nhập</p>
             </div>
             <div class="col-md-6">
-                <img src="../images/tram-sac-7.jpg" class="step-img" alt="Step 3">
+                <img src="{{asset('images/tram-sac-7.jpg')}}" class="step-img" alt="Step 3">
             </div>
         </div>
 

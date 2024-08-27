@@ -9,7 +9,7 @@
                 <h2>VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</h2>
                 <p class="text-muted">Posted on 24 tháng 7, 2024 by Trạm Sạc</p>
 
-                <img src="../images/tram-sac-12.jpg" class="img-fluid mb-4" alt="Article Image">
+                <img src="{{asset('images/tram-sac-12.jpg')}}" class="img-fluid mb-4" alt="Article Image">
 
                 <p>Hội nghị và Triển lãm Xe điện Quốc Tế là một sự kiện nổi tiếng và có nhiều ảnh hưởng quan trọng trong
                     ngành công nghiệp ô tô điện. VinFast đã giới thiệu hai mẫu xe mới của mình, VF 8 và VF 9, hứa hẹn sẽ làm
@@ -19,7 +19,7 @@
 
                 <!-- Author Section -->
                 <div class="media mb-4">
-                    <img src="../images/tram-sac-12.jpg" class="mr-3 rounded-circle" alt="Author Avatar" style="width: 64px;">
+                    <img src="{{asset('images/tram-sac-12.jpg')}}" class="mr-3 rounded-circle" alt="Author Avatar" style="width: 64px;">
                     <div class="media-body">
                         <h5 class="mt-0">TRAMSAC</h5>
                         <p>Author's bio or description goes here. You can include any other relevant information.</p>

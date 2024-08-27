@@ -85,7 +85,7 @@
     <div id="newsCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../images/tram-sac-12.jpg" class="d-block w-100" alt="Image 1">
+                <img src="{{asset('images/tram-sac-12.jpg')}}" class="d-block w-100" alt="Image 1">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>VinFast tham dự EVS35 – Ra mắt VF 8 và VF 9 tại Châu Âu</h5>
                     <p>Hội nghị và Triển lãm Xe điện Quốc Tế là sự kiện nổi tiếng và...</p>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../images/tram-sac-11.jpg" class="d-block w-100" alt="Image 2">
+                <img src="{{asset('images/tram-sac-11.jpg')}}" class="d-block w-100" alt="Image 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Hyundai dừng phân phối dòng xe Kona tại Việt Nam</h5>
                     <p>Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...</p>
@@ -119,7 +119,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <img src="../images/tram-sac-2.jpg" class="card-img-top" alt="News Image 1">
+                            <img src="{{asset('images/tram-sac-2.jpg')}}" class="card-img-top" alt="News Image 1">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="./details">VinFast tham dự EVS35</a></h5>
                                 <p class="card-text">Ra mắt VF 8 và VF 9 tại Châu Âu.</p>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <img src="../images/tram-sac-5.jpg" class="card-img-top" alt="News Image 2">
+                            <img src="{{asset('images/tram-sac-5.jpg')}}" class="card-img-top" alt="News Image 2">
                             <div class="card-body">
                                 <h5 class="card-title">Hyundai dừng phân phối dòng xe Kona</h5>
                                 <p class="card-text">Theo thông tin từ Hyundai, nhà máy tại Việt Nam đang gặp vấn đề về...

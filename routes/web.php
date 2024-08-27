@@ -40,3 +40,8 @@ Route::group(['as' => 'auth.'], function () {
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
 });
+
+// Group routes for other pages but without 'admin' prefix in the URL
+Route::group(['as' => 'admin.'], function () {
+    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+});

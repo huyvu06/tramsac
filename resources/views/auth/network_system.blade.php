@@ -111,7 +111,7 @@
 
     <div class="container">
         <div class="img">
-            <img src="../images/map.jpg" alt="Bản đồ Việt Nam">
+            <img src="{{asset('images/map.jpg')}}" alt="Bản đồ Việt Nam">
         </div>
         <div class="form">
             <h2>Đăng Ký Trở Thành Đối Tác</h2>

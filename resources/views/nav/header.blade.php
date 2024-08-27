@@ -68,7 +68,7 @@
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: #a6df4c;">
-        <a href="./home"><img src="../images/logo.jpg" alt="" style="width: 80px; height:80px"></a>
+        <a href="{{asset('home')}}"><img src="{{asset('images/logo.jpg')}}" alt="" style="width: 80px; height:80px"></a>
 
         <div class="collapse navbar-collapse " id="collapsibleNavId">
             <ul class="navbar-nav mr-auto ms-3 mt-2 mt-lg-0 py-1">

@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <img src="../images/he-thong-tram-sac.jpg" alt="Charging Station">
+                <img src="{{asset('images/he-thong-tram-sac.jpg')}}" alt="Charging Station">
             </div>
         </div>
     </div>
@@ -149,7 +149,7 @@
                 <p>Tải app: <a href="https://tramsac.vn/">nhấn vào đây để tải </a></p>
             </div>
             <div class="col-md-6">
-                <img src="../images/tram-sac-2.jpg" class="step-img" alt="Step 1">
+                <img src="{{asset('images/tram-sac-2.jpg')}}" class="step-img" alt="Step 1">
             </div>
         </div>
 
@@ -159,7 +159,7 @@
                 <p>Đăng Ký</p>
             </div>
             <div class="col-md-6 order-md-1">
-                <img src="../images/tram-sac-5.jpg" class="step-img" alt="Step 2">
+                <img src="{{asset('images/tram-sac-5.jpg')}}" class="step-img" alt="Step 2">
             </div>
         </div>
 
@@ -169,7 +169,7 @@
                 <p>Đăng Nhập</p>
             </div>
             <div class="col-md-6">
-                <img src="../images/tram-sac-7.jpg" class="step-img" alt="Step 3">
+                <img src="{{asset('images/tram-sac-7.jpg')}}" class="step-img" alt="Step 3">
             </div>
         </div>
 
@@ -183,7 +183,7 @@
         <h3 class="text-center">Hỗ Trợ Tư Vấn</h3>
         <div class="row">
             <div class="col-md-6">
-                <img src="../images/unnamed.jpg" alt="Support">
+                <img src="{{asset('images/unnamed.jpg')}}" alt="Support">
             </div>
             <div class="col-md-6">
                 <form>
