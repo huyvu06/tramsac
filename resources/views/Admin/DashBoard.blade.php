@@ -168,6 +168,9 @@
             <div class="notification">
                 <i class="fas fa-bell"></i>
             </div>
+            <div class="notification">
+               <a href="{{route('home')}}">thoát</a>
+            </div>
         </div>
     </div>
     <div class="sidebar">
@@ -180,6 +183,13 @@
                 <li><i class="fas fa-plug"></i><span> Trạm Sạc</span></li>
                 <li><i class="fas fa-envelope"></i><span> Email</span></li>
                 <li><i class="fas fa-cog"></i><span> Cài Đặt</span></li>
+                <li><i class="fas fa-cog"></i><span>
+                    @auth
+                        {{ Auth::user()->name }}
+                    @else
+                        Khách
+                    @endauth
+                </span></li>
             </ul>
         </nav>
     </div>

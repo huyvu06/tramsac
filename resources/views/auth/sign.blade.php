@@ -160,19 +160,20 @@
     <div class="main-content">
         <div class="container">
             <div class="form-container">
-                <h1>Sign up</h1>
-                <form method="POST" action="{{ route('auth.sign') }}">
+                <h1>Register</h1>
+                <form method="POST" action="">
+                    @csrf
                     <div class="form-group">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" name="name" required>
                     </div>
                     <div class="form-group">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" name="email" required>
                     </div>
                     <div class="form-group">
                         <i class="fas fa-lock"></i>
-                        <input type="password" id="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" name="password" required>
                         <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
                     </div>
                     <div class="form-group">

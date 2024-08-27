@@ -207,14 +207,24 @@
         </div>
         <div class="form-container">
             <h1>Login</h1>
-            <form>
+        @if ($message = Session::get('error'))
+           <div class="alert alert-danger alert-block">
+	          
+                <button type="button" class="close" data-dismiss="alert">×</button>	
+        
+               <strong>{{ $message }}</strong>
+          </div>
+          
+     @endif
+            <form action="" method="POST">
+                @csrf
                 <div class="form-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Email" name="email" required>
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password" name="password" required>
                     <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
                 </div>
                 <div class="checkbox-group">

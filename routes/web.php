@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\DashBoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,25 +24,29 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'Home'])->name('home');
 
 // admin
+// routes/web.php
 Route::prefix('admin')->group(function(){
+    Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
+  // routes/web.php
+    Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
 
 });
 
-;
+
 
 // Group routes for other pages but without 'auth' prefix in the URL
-Route::group(['as' => 'auth.'], function () {
+
     Route::get('/login', [UserController::class,'login'])->name('login');
+    Route::post('/login', [UserController::class,'postLogin']);
+
+   
     Route::get('/sign', [UserController::class,'sign'])->name('sign');
+    Route::post('/sign', [UserController::class,'postSign']);
+
     Route::view('/network_system', 'auth.network_system')->name('network_system');
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
     Route::view('/news', 'auth.news')->name('news');
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
-});
 
-// Group routes for other pages but without 'admin' prefix in the URL
-Route::group(['as' => 'admin.'], function () {
-    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
-});
