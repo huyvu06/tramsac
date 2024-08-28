@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\Admin\DashBoardController;
 /*
 |--------------------------------------------------------------------------
@@ -21,16 +21,11 @@ use App\Http\Controllers\Admin\DashBoardController;
 // Route::get('/', function () {
 //     return redirect('/home'); // Chuyển hướng đến trang /home
 // });
-Route::get('/', [HomeController::class, 'Home'])->name('home');
+
 
 // admin
 // routes/web.php
-Route::prefix('admin')->group(function(){
-    Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
-  // routes/web.php
-    Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
 
-});
 
 
 
@@ -43,6 +38,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/sign', [UserController::class,'sign'])->name('sign');
     Route::post('/sign', [UserController::class,'postSign']);
 
+    Route::get('/', [HomeController::class, 'Home'])->name('home');
+
     Route::view('/network_system', 'auth.network_system')->name('network_system');
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
@@ -50,3 +47,9 @@ Route::prefix('admin')->group(function(){
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
 
+    Route::prefix('admin')->group(function(){
+      Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
+    // routes/web.php
+      Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
+  
+  });

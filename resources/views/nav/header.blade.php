@@ -124,10 +124,10 @@
 
                     @guest
                     <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
+                        <a class="btn btn-outline-light mr-2" href="{{route('auth.login')}}" role="button">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light" href="{{route('sign')}}" role="button">Đăng ký</a>
+                        <a class="btn btn-light" href="{{route('auth.sign')}}" role="button">Đăng ký</a>
                     </li>
                     @else
                     <li class="nav-item">
@@ -137,17 +137,6 @@
                         <a class="btn btn-light" href="{{route('auth.logout')}}" role="button">Đăng xuất</a>
                     </li>
                     @endguest
-
-                                        
-
-                    @auth
-                    <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2">{{ Auth::user()->name }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="{{ route('auth.logout') }}" role="button">Đăng xuất</a>
-                    </li>
-                    @endauth
 
                 </ul>
             </form>
