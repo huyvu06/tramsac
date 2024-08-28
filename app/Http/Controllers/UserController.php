@@ -38,25 +38,25 @@ class UserController extends Controller
 
 public function postLogin(Request $req) {
     // Xác thực người dùng
-    if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
-        $user = Auth::user();
+    // if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
+    //     $user = Auth::user();
 
-        // Kiểm tra lại session
-        if(session()->has('user')) {
-            session()->forget('user');
-        }
-        session(['user' => $user]);
+    //     // Kiểm tra lại session
+    //     if(session()->has('user')) {
+    //         session()->forget('user');
+    //     }
+    //     session(['user' => $user]);
 
-        // Debug thông tin session
-        dd(session()->all());
+    //     // Debug thông tin session
+    //     dd(session()->all());
 
-        // Kiểm tra vai trò của người dùng
-        if ($user->role == 'admin') {
-            return redirect()->route('admin.dashboard');
-        } else {
-            return redirect()->route('home');
-        }
-    }
+    //     // Kiểm tra vai trò của người dùng
+    //     if ($user->role == 'admin') {
+    //         return redirect()->route('admin.dashboard');
+    //     } else {
+    //         return redirect()->route('home');
+    //     }
+    // }
 
     return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');
 }

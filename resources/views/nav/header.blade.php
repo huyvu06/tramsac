@@ -108,11 +108,15 @@
                                 @auth
                                 {{ Auth::user()->name }}
                                 @else
-                                Liên Hệ
+                                {{route('admin.index')}}
                                 @endauth
                             </a>
                         </li>
-                        
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('admin.index')}}" style="color: #707862;">
+                             user  
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </ul>

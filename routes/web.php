@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\DashBoardController;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,14 @@ Route::prefix('admin')->group(function(){
     Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
   // routes/web.php
     Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
+    
+    Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
+    Route::get('/account', [DashBoardController::class, 'account'])->name('admin.account');
+    Route::get('/news', [DashBoardController::class, 'news'])->name('admin.news');
+    Route::get('/approval', [DashBoardController::class, 'approval'])->name('admin.approval');
+    Route::get('/charging-station', [DashBoardController::class, 'chargingStation'])->name('admin.charging-station');
+    Route::get('/email', [DashBoardController::class, 'email'])->name('admin.email');
+    Route::get('/settings', [DashBoardController::class, 'settings'])->name('admin.settings');
 
 });
 
@@ -50,3 +59,10 @@ Route::prefix('admin')->group(function(){
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
 
+    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+
+    Route::get('/approval', [DashboardController::class, 'approval']);
+    Route::get('/charging-station', [DashboardController::class, 'chargingStation']);
+    Route::get('/email', [DashboardController::class, 'email']);
+    Route::get('/settings', [DashboardController::class, 'settings']);
+    
