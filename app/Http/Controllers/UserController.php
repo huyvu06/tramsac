@@ -26,14 +26,14 @@ class UserController extends Controller
     ]);
 
     $validatedData['password'] = Hash::make($req->password);
-
+    dd($req->all());
     try {
         User::create($validatedData);
     } catch (\Throwable $th) {
         dd($th); // Handle the error, possibly by showing a user-friendly message
     }
 
-    return redirect()->route('auth.login');
+    return redirect()->route('login');
 }
 
 public function postLogin(Request $req) {
