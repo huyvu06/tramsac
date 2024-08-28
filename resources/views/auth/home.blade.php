@@ -1,5 +1,7 @@
 @extends('nav.header')
 @section('title', 'Home')
+
+
 <style>
     h2 {
         text-align: center;
@@ -141,8 +143,7 @@
 
     <!-- Steps Section -->
     <div class="container center steps">
-        <h3 class="text-center">Hướng Dẫn Sử Dụng</h3>
-
+      <h3 class="text-center">Hướng Dẫn Sử Dụng</h3>
         <div class="row step-container">
             <div class="col-md-6 step-odd text-left">
                 <h4>Bước 1:</h4>

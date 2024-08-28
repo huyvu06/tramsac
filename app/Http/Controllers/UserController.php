@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Hash;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
@@ -20,21 +20,31 @@ class UserController extends Controller
 {
     // Validate request data (consider adding validation rules for email uniqueness)
     $validatedData = $req->validate([
-        'name' => 'required|string|max:255',
+        'name' => 'required',
         'email' => 'required|email|unique:users,email',
         'password' => 'required|min:6',
     ]);
 
+    // Check validated data
+    // dd($validatedData);
+
     $validatedData['password'] = Hash::make($req->password);
-    dd($req->all());
+
+    // Check if password was hashed correctly
+    // dd($validatedData);
+
     try {
         User::create($validatedData);
+
+        // Check if user creation is successful
+        // dd('User created successfully');
     } catch (\Throwable $th) {
         dd($th); // Handle the error, possibly by showing a user-friendly message
     }
 
     return redirect()->route('login');
 }
+
 
 public function postLogin(Request $req) {
     // Xác thực người dùng
@@ -48,11 +58,11 @@ public function postLogin(Request $req) {
         session(['user' => $user]);
 
         // Debug thông tin session
-        dd(session()->all());
+        // dd(session()->all());
 
         // Kiểm tra vai trò của người dùng
         if ($user->role == 'admin') {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.index');
         } else {
             return redirect()->route('home');
         }
