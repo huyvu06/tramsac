@@ -112,11 +112,15 @@
                                 @endauth
                             </a>
                         </li>
+<<<<<<< Updated upstream
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('admin.index')}}" style="color: #707862;">
                              user  
                             </a>
                         </li>
+=======
+
+>>>>>>> Stashed changes
                     </ul>
                 </div>
             </ul>
@@ -142,7 +146,7 @@
                     </li>
                     @endguest
 
-                                        
+
 
                     @auth
                     <li class="nav-item">
@@ -169,7 +173,9 @@
     <!-- Map Section -->
     <div class="map">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8856.147389309785!2d105.91165358341146!3d21.050632440496003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a9a0a78b480b%3A0xde012606025bd95e!2zVG_DoCBuaMOgIFbEg24gcGjDsm5nIFN5bXBob255!5e0!3m2!1svi!2s!4v1724589525756!5m2!1svi!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8856.147389309785!2d105.91165358341146!3d21.
+            050632440496003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a9a0a78b480b%3A0xde012606025bd95e!
+            2zVG_DoCBuaMOgIFbEg24gcGjDsm5nIFN5bXBob255!5e0!3m2!1svi!2s!4v1724589525756!5m2!1svi!2s"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
