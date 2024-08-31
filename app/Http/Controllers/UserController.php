@@ -41,18 +41,10 @@ class UserController extends Controller
 
 
 public function postLogin(Request $req) {
-    if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
-        $user = Auth::user();
-        if(session()->has('user')) {
-            session()->forget('user');
-        }
-        session(['user' => $user]);
-        // dd(session()->all());
-        if ($user->role == 'admin') {
-            return redirect()->route('admin.index');
-        } else {
-            return redirect()->route('home');
-        }
+    if (Auth::attempt(['email' => $req->email, 'password' => $req->password,'role'=>0])) {
+       
+            return view('auth.home');
+        
     }
 
     return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');

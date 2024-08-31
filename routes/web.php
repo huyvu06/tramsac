@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,9 +48,11 @@ use App\Http\Controllers\Admin\DashBoardController;
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
 
-    Route::prefix('admin')->group(function(){
-      Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
-    // routes/web.php
-      Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
-  
+
+    Route::get('/logon',[AdminController::class,'logon'])->name('logon');
+    Route::post('/logon',[AdminController::class,'postLogon'])->name('admin.logon');
+    // admin
+    Route::prefix('admin')->middleware('admin')->group(function () {
+      Route::get('/admin', [DashBoardController::class, 'index'])->name('admin.index');
   });
+  

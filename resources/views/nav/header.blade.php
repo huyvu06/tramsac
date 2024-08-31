@@ -105,11 +105,9 @@
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#" style="color: #707862;">
-                                @auth
-                                {{ Auth::user()->name }}
-                                @else
+                                
                                 Liên Hệ
-                                @endauth
+                                
                             </a>
                         </li>
                         
@@ -124,17 +122,17 @@
 
                     @guest
                     <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2" href="{{route('auth.login')}}" role="button">Đăng nhập</a>
+                        <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light" href="{{route('auth.sign')}}" role="button">Đăng ký</a>
+                        <a class="btn btn-light" href="{{route('sign')}}" role="button">Đăng ký</a>
                     </li>
                     @else
                     <li class="nav-item">
                         <a class="btn btn-outline-light mr-2">{{Auth::user()->name}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-light" href="{{route('auth.logout')}}" role="button">Đăng xuất</a>
+                        <a class="btn btn-light" href="" role="button">Đăng xuất</a>
                     </li>
                     @endguest
 
@@ -162,16 +160,6 @@
     <!-- Footer Section -->
     <footer>
         <p>Copyright 2024 © Trạm Sạc</p>
-        @php
-    $user = Auth::user();
-        @endphp
-
-        @if ($user)
-            <p>Người dùng hiện tại: {{ $user->name }}</p>
-        @else
-            <p>Chưa đăng nhập</p>
-        @endif
-
     </footer>
 
 </body>
