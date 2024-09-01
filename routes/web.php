@@ -35,7 +35,7 @@ use App\Http\Controllers\Admin\AdminController;
     Route::get('/login', [UserController::class,'login'])->name('login');
     Route::post('/login', [UserController::class,'postLogin']);
 
-   
+    
     Route::get('/sign', [UserController::class,'sign'])->name('sign');
     Route::post('/sign', [UserController::class,'postSign']);
 
