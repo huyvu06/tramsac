@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     public function login(){
@@ -15,7 +18,7 @@ class UserController extends Controller
     public function sign(){
         return view('auth.sign');
     }
-
+    
     public function postSign(Request $req)
 {
     
@@ -39,16 +42,27 @@ class UserController extends Controller
     return redirect()->route('login');
 }
 
+public function logout(Request $request) {
+    Auth::logout();
+    $request->session()->flush(); // Xóa toàn bộ dữ liệu session
+    $request->session()->regenerate(); // Tạo lại ID session để tránh tấn công session fixation
+
+    return view('auth.home');
+}
 
 public function postLogin(Request $req) {
-    if (Auth::attempt(['email' => $req->email, 'password' => $req->password,'role'=>0])) {
-       
-            return view('auth.home');
-        
+    $credentials = $req->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        // Lưu thông tin người dùng vào session
+        session(['user_name' => Auth::user()->name]);
+
+        return view('auth.home');
     }
 
     return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');
 }
+
 
 
 }

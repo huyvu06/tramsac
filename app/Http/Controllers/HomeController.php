@@ -11,4 +11,7 @@ class HomeController extends Controller
     public function Home(){
         return view('auth.home');
     }
+    public function getNew(){
+        return view('auth.news');
+    }
 }

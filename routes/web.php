@@ -18,19 +18,11 @@ use App\Http\Controllers\Admin\AdminController;
 */
 
 
-// Route cho trang chủ
-// Route::get('/', function () {
-//     return redirect('/home'); // Chuyển hướng đến trang /home
-// });
-
-
-// admin
-// routes/web.php
-
 
 
 
 // Group routes for other pages but without 'auth' prefix in the URL
+Route::get('/home', [HomeController::class, 'Home'])->name('home');
 
     Route::get('/login', [UserController::class,'login'])->name('login');
     Route::post('/login', [UserController::class,'postLogin']);
@@ -39,15 +31,14 @@ use App\Http\Controllers\Admin\AdminController;
     Route::get('/sign', [UserController::class,'sign'])->name('sign');
     Route::post('/sign', [UserController::class,'postSign']);
 
-    Route::get('/', [HomeController::class, 'Home'])->name('home');
-
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+   
     Route::view('/network_system', 'auth.network_system')->name('network_system');
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
-    Route::view('/news', 'auth.news')->name('news');
+    Route::get('/news', [HomeController::class,'getNew'])->name('news');
     Route::view('/details', 'auth.details')->name('details');
     Route::view('/introduce', 'auth.introduce')->name('introduce');
-
 
     Route::get('/logon',[AdminController::class,'logon'])->name('logon');
     Route::post('/logon',[AdminController::class,'postLogon'])->name('admin.logon');
