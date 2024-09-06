@@ -68,8 +68,7 @@
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: #a6df4c;">
-        <a href="{{asset('home')}}"><img src="{{asset('images/logo.jpg')}}" alt="" style="width: 80px; height:80px"></a>
-
+        <a href="{{route('home')}}"><img src="{{asset('images/logo.jpg')}}" alt="" style="width: 80px; height:80px"></a>
         <div class="collapse navbar-collapse " id="collapsibleNavId">
             <ul class="navbar-nav mr-auto ms-3 mt-2 mt-lg-0 py-1">
                 <li class="nav-item dropdown px-3">
@@ -78,7 +77,7 @@
                         Thiệu </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('introduce') }}"> Về chúng tôi </a>
-                        <a class="dropdown-item" href="{{ asset('news') }}"> Tin tức </a>
+                        <a class="dropdown-item" href="{{ route('news') }}"> Tin tức </a>
                     </div>
                 </li>
 
@@ -89,7 +88,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('map') }}"> Bản Đồ Trạm sạc </a>
                         <a class="dropdown-item" href="{{ asset('network_system') }}"> Hệ Thống Mạng Lưới </a>
-                        <a class="dropdown-item" href="{{ asset('user_manual') }}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
+                        <a class="dropdown-item" href="{{ route('user_manual') }}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
                     </div>
                 </li>
 
@@ -99,7 +98,7 @@
                         Cho Đối Tác </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{ asset('#') }}"> Giải Pháp Quản Lý </a>
-                        <a class="dropdown-item" href="{{ asset('tramsac') }}"> Đăng Ký Trạm Sạc </a>
+                        <a class="dropdown-item" href="{{ route('tramsac') }}"> Đăng Ký Trạm Sạc </a>
                     </div>
                 </li>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -119,6 +118,7 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <ul class="navbar-nav ml-auto">
 
+
                     @guest
                         <li class="nav-item">
                             <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
@@ -134,6 +134,27 @@
                             <a class="btn btn-light" href="" role="button">Đăng xuất</a>
                         </li>
                     @endguest
+
+
+                    @auth
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light mr-2">{{ session('user_name', Auth::user()->name) }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-light">Đăng xuất</button>
+                        </form>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light mr-2" href="{{ route('login') }}" role="button">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-light" href="{{ route('sign') }}" role="button">Đăng ký</a>
+                    </li>
+                    @endauth
+                    
 
                 </ul>
             </form>
@@ -159,6 +180,10 @@
     <!-- Footer Section -->
     <footer>
         <p>Copyright 2024 © Trạm Sạc</p>
+@auth
+   <a href=""> {{auth()->user()->name}} </a> 
+@endauth
+
     </footer>
 
 </body>
