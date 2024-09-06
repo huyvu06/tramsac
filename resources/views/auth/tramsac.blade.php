@@ -1,6 +1,6 @@
-@extends('nav.header')
-@section('title', 'Tramsac')
-@section('content')
+    @extends('nav.header')
+    @section('title', 'Tramsac')
+    @section('content')
     <style>
         * {
             margin: 0;
@@ -102,38 +102,123 @@
         }
     </style>
 
-    <div class="container">
-        <form class="form-container">
+<div class="container">
+        <form class="form-container" method="POST" action="{{ route('charging-station.store') }}">
+            @csrf
             <h1>Đối Tác Chiến Lược</h1>
+
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="form-group">
                 <label for="name">Họ Và Tên(*):</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required value="{{ old('name') }}">
             </div>
             <div class="form-group">
                 <label for="phone">Số Điện Thoại(*):</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" required value="{{ old('phone') }}">
             </div>
             <div class="form-group">
                 <label for="email">Email(*):</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required value="{{ old('email') }}">
             </div>
             <div class="form-group">
                 <label for="name_tramsac">Tên Trạm Sạc(*):</label>
-                <input type="text" id="name_tramsac" name="name_tramsac" required>
+                <input type="text" id="name_tramsac" name="name_tramsac" required value="{{ old('name_tramsac') }}">
             </div>
             <div class="form-group">
                 <label for="content">Nội Dung:</label>
-                <input type="text" id="content" name="content">
+                <input type="text" id="content" name="content" value="{{ old('content') }}">
             </div>
             <div class="form-group">
                 <label for="map">Kinh Độ & Vĩ Độ:</label>
-                <input type="text" id="map" name="map">
+                <input type="text" id="map" name="map" placeholder="Nhấp vào 'Lấy Vị Trí' để tự động điền hoặc nhập thủ công" value="{{ old('map') }}">
+                <button type="button" id="getLocation" class="btn btn-secondary">Lấy Vị Trí</button>
             </div>
             <div class="form-group">
                 <label for="address">Địa chỉ:</label>
-                <textarea id="address" name="address" rows="4" required></textarea>
+                <textarea id="address" name="address" rows="4" required>{{ old('address') }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Gửi</button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('getLocation').addEventListener('click', function () {
+                const mapInput = document.getElementById('map');
+                const errorContainer = document.createElement('div');
+                errorContainer.style.color = 'red';
+                errorContainer.style.marginTop = '10px';
+                
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        const lat = position.coords.latitude.toFixed(6); // Giới hạn 6 chữ số thập phân
+                        const lon = position.coords.longitude.toFixed(6); // Giới hạn 6 chữ số thập phân
+
+                        // Cập nhật giá trị cho ô kinh độ và vĩ độ
+                        mapInput.value = lat + ', ' + lon;
+                    }, function(error) {
+                        let message = '';
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                message = 'Bạn đã từ chối yêu cầu lấy vị trí.';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                message = 'Vị trí không khả dụng.';
+                                break;
+                            case error.TIMEOUT:
+                                message = 'Yêu cầu lấy vị trí hết thời gian.';
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                message = 'Lỗi không xác định.';
+                                break;
+                        }
+                        // Hiển thị thông báo lỗi
+                        mapInput.value = '';
+                        if (!document.querySelector('#error-message')) {
+                            errorContainer.id = 'error-message';
+                            errorContainer.textContent = message;
+                            document.querySelector('.form-container').appendChild(errorContainer);
+                        } else {
+                            errorContainer.textContent = message;
+                        }
+                    }, {
+                        enableHighAccuracy: true, // Yêu cầu chính xác cao hơn
+                        timeout: 10000, // Thời gian chờ 10 giây
+                        maximumAge: 0 // Không sử dụng thông tin đã lưu
+                    });
+                } else {
+                    // Trình duyệt không hỗ trợ geolocation
+                    mapInput.value = '';
+                    if (!document.querySelector('#error-message')) {
+                        errorContainer.id = 'error-message';
+                        errorContainer.textContent = 'Geolocation không được hỗ trợ bởi trình duyệt của bạn.';
+                        document.querySelector('.form-container').appendChild(errorContainer);
+                    } else {
+                        errorContainer.textContent = 'Geolocation không được hỗ trợ bởi trình duyệt của bạn.';
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

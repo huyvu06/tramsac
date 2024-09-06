@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NetworkSystemController;
 
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\TramsacController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +43,8 @@ use App\Http\Controllers\Admin\AdminController;
 
     Route::get('/', [HomeController::class, 'Home'])->name('home');
 
-    Route::view('/network_system', 'auth.network_system')->name('network_system');
+    Route::view('/map', 'auth.map')->name('map');
+    Route::view('/network_system', 'auth.network_system')->name('network_system');  
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
     Route::view('/news', 'auth.news')->name('news');
@@ -56,3 +59,13 @@ use App\Http\Controllers\Admin\AdminController;
       Route::get('/admin', [DashBoardController::class, 'index'])->name('admin.index');
   });
   
+
+  // Đăng ký trở thành đối tác
+Route::post('/register-partner', [NetworkSystemController::class, 'store'])->name('register.partner');
+
+
+// Route để hiển thị form đăng ký trạm sạc
+Route::get('/register-charging-station', [TramSacController::class, 'showForm'])->name('charging-station.show');
+
+// Route để lưu trạm sạc
+Route::post('/register-charging-station', [TramSacController::class, 'store'])->name('charging-station.store');

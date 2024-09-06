@@ -43,7 +43,7 @@
         }
 
         .map {
-            padding-top: 20px ;
+            padding-top: 20px;
             background-color: #8ff76e;
             padding: 20px;
             text-align: center;
@@ -87,6 +87,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #707862;"> Dành
                         cho khách hàng </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="{{ asset('map') }}"> Bản Đồ Trạm sạc </a>
                         <a class="dropdown-item" href="{{ asset('network_system') }}"> Hệ Thống Mạng Lưới </a>
                         <a class="dropdown-item" href="{{ asset('user_manual') }}"> Hướng Dẫn Sự Dụng Trạm Sạc </a>
                     </div>
@@ -108,7 +109,7 @@
                                 Liên Hệ
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </ul>
@@ -119,19 +120,19 @@
                 <ul class="navbar-nav ml-auto">
 
                     @guest
-                    <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="{{route('sign')}}" role="button">Đăng ký</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light" href="{{route('sign')}}" role="button">Đăng ký</a>
+                        </li>
                     @else
-                    <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2">{{Auth::user()->name}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-light" href="" role="button">Đăng xuất</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light mr-2">{{Auth::user()->name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light" href="" role="button">Đăng xuất</a>
+                        </li>
                     @endguest
 
                 </ul>
