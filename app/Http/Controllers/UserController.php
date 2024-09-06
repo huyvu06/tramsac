@@ -63,6 +63,4 @@ public function postLogin(Request $req) {
     return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');
 }
 
-
-
 }
