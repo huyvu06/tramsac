@@ -119,7 +119,7 @@
                 <ul class="navbar-nav ml-auto">
 
 
-                    @guest
+                    <!-- @guest
                         <li class="nav-item">
                             <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
                         </li>
@@ -133,7 +133,7 @@
                         <li class="nav-item">
                             <a class="btn btn-light" href="" role="button">Đăng xuất</a>
                         </li>
-                    @endguest
+                    @endguest -->
 
 
                     @auth

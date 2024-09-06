@@ -38,8 +38,6 @@ Route::get('/home', [HomeController::class, 'Home'])->name('home');
 
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
    
-    Route::view('/network_system', 'auth.network_system')->name('network_system');
-
     Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
     Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
     Route::get('/news', [HomeController::class,'getNew'])->name('news');
