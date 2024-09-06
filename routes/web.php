@@ -30,9 +30,6 @@ Route::get('/home', [HomeController::class, 'Home'])->name('home');
     Route::get('/sign', [UserController::class,'sign'])->name('sign');
     Route::post('/sign', [UserController::class,'postSign']);
 
-
-    Route::get('/', [HomeController::class, 'Home'])->name('home');
-
     Route::view('/map', 'auth.map')->name('map');
     Route::view('/network_system', 'auth.network_system')->name('network_system');  
 

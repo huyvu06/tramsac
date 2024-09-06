@@ -42,13 +42,13 @@ class UserController extends Controller
     return redirect()->route('login');
 }
 
-public function logout(Request $request) {
-    Auth::logout();
-    $request->session()->flush(); // Xóa toàn bộ dữ liệu session
-    $request->session()->regenerate(); // Tạo lại ID session để tránh tấn công session fixation
+// public function logout(Request $request) {
+//     Auth::logout();
+//     $request->session()->flush(); // Xóa toàn bộ dữ liệu session
+//     $request->session()->regenerate(); // Tạo lại ID session để tránh tấn công session fixation
 
-    return view('auth.home');
-}
+//     return view('auth.home');
+// }
 
 public function postLogin(Request $req) {
     $credentials = $req->only('email', 'password');
@@ -57,7 +57,8 @@ public function postLogin(Request $req) {
         // Lưu thông tin người dùng vào session
         session(['user_name' => Auth::user()->name]);
 
-        return view('auth.home');
+        return redirect()->route('home') ;
+        // return Auth::user()->name;
     }
 
     return redirect()->back()->with('error', 'Thông tin đăng nhập không đúng.');

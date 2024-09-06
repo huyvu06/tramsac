@@ -117,33 +117,14 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <ul class="navbar-nav ml-auto">
-
-
-                    <!-- @guest
-                        <li class="nav-item">
-                            <a class="btn btn-outline-light mr-2" href="{{route('login')}}" role="button">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-light" href="{{route('sign')}}" role="button">Đăng ký</a>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="btn btn-outline-light mr-2">{{Auth::user()->name}}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-light" href="" role="button">Đăng xuất</a>
-                        </li>
-                    @endguest -->
-
-
                     @auth
                     <li class="nav-item">
-                        <a class="btn btn-outline-light mr-2">{{ session('user_name', Auth::user()->name) }}</a>
+                        <a class="btn btn-outline-light mr-2">{{ Auth::user()->name }}</a>
                     </li>
                     <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                        <form action="" method="" class="d-inline">
                             @csrf
-                            <button type="submit" class="btn btn-light">Đăng xuất</button>
+                            <a  class="btn btn-light">Đăng xuất</a>
                         </form>
                     </li>
                     @else

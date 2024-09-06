@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function Home(){
         return view('auth.home');
+        // return Auth::user()->name;
     }
     public function getNew(){
         return view('auth.news');
