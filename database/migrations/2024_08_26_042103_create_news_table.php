@@ -15,8 +15,6 @@ return new class extends Migration {
             $table->string('title'); 
             $table->string('image'); 
             $table->text('content');  
-            $table->timestamp('date_up')->nullable();
-            $table->timestamp('date_edit')->nullable(); 
             $table->integer('binhluan')->default(0); 
             $table->timestamps();
         });

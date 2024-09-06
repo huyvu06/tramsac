@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,9 +55,11 @@
             color: #ffffff;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
-            text-align: center; /* Center align text in table cells */
+            text-align: center;
+            /* Center align text in table cells */
             border: 1px solid #ddd;
             vertical-align: middle;
         }
@@ -95,7 +98,8 @@
         .action-buttons {
             display: flex;
             gap: 10px;
-            justify-content: center; /* Center align action buttons */
+            justify-content: center;
+            /* Center align action buttons */
         }
 
         .action-buttons a {
@@ -114,6 +118,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Account Table</h1>
@@ -123,43 +128,33 @@
                 <tr>
                     <th>ID</th>
                     <th>Tên</th>
+                    <th>Hình Ảnh</th>
+                    <th>Số Điện Thoại</th>
                     <th>Email</th>
                     <th>Quyền</th>
-                    <th>Trạng Thái</th>
-                    <th>Ngày</th>
+                    <th>Mật Khẩu</th>
                     <th>Tùy Chọn</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Example of a row with all cells filled -->
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john.doe@example.com</td>
-                    <td>Admin</td>
-                    <td class="status-active">Active</td>
-                    <td>2024-08-28</td>
-                    <td class="action-buttons">
-                        <a href="#" class="edit"><i class="fas fa-edit"></i>Sửa</a>
-                        <a href="#" class="delete"><i class="fas fa-trash"></i>Xóa</a>
-                    </td>
-                </tr>
-                <!-- Example of a row with missing data for some cells -->
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>jane.smith@example.com</td>
-                    <td>User</td>
-                    <td class="status-inactive">Inactive</td>
-                    <td>N/A</td>
-                    <td class="action-buttons">
-                        <a href="#" class="edit"><i class="fas fa-edit"></i>Sửa</a>
-                        <a href="#" class="delete"><i class="fas fa-trash"></i>Xóa</a>
-                    </td>
-                </tr>
-                <!-- Add more rows as needed -->
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->user_id }}</td>
+                        <td>{{ $user->name ?? 'N/A'}}</td>
+                        <td>{{ $user->images ?? 'N/A'}}</td>
+                        <td>{{ $user->phone ?? 'N/A'}}</td>
+                        <td>{{ $user->email ?? 'N/A'}}</td>
+                        <td>{{ $user->role ?? 'N/A' }}</td>
+                        <td>{{ $user->password ?? 'N/A'}}</td>
+                        <td class="action-buttons">
+                            <a href="#" class="edit"><i class="fas fa-edit"></i>Sửa</a>
+                            <a href="#" class="delete"><i class="fas fa-trash"></i>Xóa</a>
+                        </td>
+                    </tr>
+                @endforeach             
             </tbody>
         </table>
     </div>
 </body>
+
 </html>

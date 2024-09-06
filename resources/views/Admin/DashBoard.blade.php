@@ -1,3 +1,4 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -202,7 +203,8 @@
     <div class="sidebar">
         <nav>
             <ul>
-                <li class="active" data-url="{{ url('/dashboard') }}"><i class="fas fa-home"></i><span> Dashboard</span></li>
+                <li class="active" data-url="{{ url('/dashboard') }}"><i class="fas fa-home"></i><span> Dashboard</span>
+                </li>
                 <li data-url="{{ route('admin.account') }}"><i class="fas fa-user"></i><span> Tài Khoản</span></li>
                 <li data-url="{{ route('admin.news') }}"><i class="fas fa-newspaper"></i><span> Tin tức</span></li>
                 <li data-url="{{ route('admin.approval') }}"><i class="fas fa-check-circle"></i><span> Phê Duyệt</span>
@@ -255,7 +257,11 @@
             });
 
             function loadContent(url) {
-                fetch(url)
+                fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');
@@ -268,7 +274,6 @@
                     .catch(error => {
                         contentArea.innerHTML = '<h2>Error</h2><p>Unable to load content.</p>';
                         console.error('Error loading content:', error);
-                        // Log more detailed error information
                         console.error('URL:', url);
                         console.error('Error details:', error.message);
                     });

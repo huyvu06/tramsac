@@ -21,8 +21,6 @@ class NewsTableSeeder extends Seeder
                 'title' => Str::random(10), // Tạo tiêu đề ngẫu nhiên
                 'image' => 'path/to/image' . $i . '.jpg', // Đường dẫn hình ảnh ngẫu nhiên
                 'content' => Str::random(50), // Nội dung ngẫu nhiên
-                'date_up' => Carbon::now(), // Ngày đăng hiện tại
-                'date_edit' => Carbon::now(), // Ngày chỉnh sửa hiện tại
                 'binhluan' => rand(0, 100), // Số lượng bình luận ngẫu nhiên
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

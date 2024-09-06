@@ -116,48 +116,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>Account Table</h1>
+        <h1>News Table</h1>
         <a href="#" class="btn"><i class="fas fa-plus"></i>Thêm</a>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tên</th>
-                    <th>Email</th>
-                    <th>Quyền</th>
-                    <th>Trạng Thái</th>
-                    <th>Ngày</th>
+                    <th>Tiêu Đề</th>
+                    <th>Hình Ảnh</th>
+                    <th>Nội Dung</th>
+                    <th>Bình Luận</th>
+                    <th>Ngày Tạo</th>
+                    <th>Ngày Cập Nhật</th>
                     <th>Tùy Chọn</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Example of a row with all cells filled -->
+            @foreach ($news as $new)
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john.doe@example.com</td>
-                    <td>Admin</td>
-                    <td class="status-active">Active</td>
-                    <td>2024-08-28</td>
+                    <td>{{ $new->id_news }}</td>
+                    <td>{{ $new->title }}</td>
+                    <td>{{ $new->image }}</td>
+                    <td>{{ $new->content ?? 'N/A' }}</td>
+                    <td>{{ $new->binhluan ?? 'N/A' }}</td>
+                    <td>{{ $new->created_at ?? 'N/A' }}</td>
+                    <td>{{ $new->updated_at ?? 'N/A' }}</td>
                     <td class="action-buttons">
                         <a href="#" class="edit"><i class="fas fa-edit"></i>Sửa</a>
                         <a href="#" class="delete"><i class="fas fa-trash"></i>Xóa</a>
                     </td>
                 </tr>
-                <!-- Example of a row with missing data for some cells -->
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>jane.smith@example.com</td>
-                    <td>User</td>
-                    <td class="status-inactive">Inactive</td>
-                    <td>N/A</td>
-                    <td class="action-buttons">
-                        <a href="#" class="edit"><i class="fas fa-edit"></i>Sửa</a>
-                        <a href="#" class="delete"><i class="fas fa-trash"></i>Xóa</a>
-                    </td>
-                </tr>
-                <!-- Add more rows as needed -->
+            @endforeach
             </tbody>
         </table>
     </div>

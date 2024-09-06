@@ -26,18 +26,18 @@ Route::get('/', [HomeController::class, 'Home'])->name('home');
 
 // admin
 // routes/web.php
-Route::prefix('admin')->group(function(){
-    Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
+Route::prefix('admin')->group(function () {
+  Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
   // routes/web.php
-    Route::get('/dashboard',[DashBoardController::class, 'logout'])->name('logout');
-    
-    Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
-    Route::get('/account', [DashBoardController::class, 'account'])->name('admin.account');
-    Route::get('/news', [DashBoardController::class, 'news'])->name('admin.news');
-    Route::get('/approval', [DashBoardController::class, 'approval'])->name('admin.approval');
-    Route::get('/charging-station', [DashBoardController::class, 'chargingStation'])->name('admin.charging-station');
-    Route::get('/email', [DashBoardController::class, 'email'])->name('admin.email');
-    Route::get('/settings', [DashBoardController::class, 'settings'])->name('admin.settings');
+  Route::get('/dashboard', [DashBoardController::class, 'logout'])->name('logout');
+
+  Route::get('/', [DashBoardController::class, 'index'])->name('admin.index');
+  Route::get('/account', [DashBoardController::class, 'account'])->name('admin.account');
+  Route::get('/news', [DashBoardController::class, 'news'])->name('admin.news');
+  Route::get('/approval', [DashBoardController::class, 'approval'])->name('admin.approval');
+  Route::get('/charging-station', [DashBoardController::class, 'chargingStation'])->name('admin.charging-station');
+  Route::get('/email', [DashBoardController::class, 'email'])->name('admin.email');
+  Route::get('/settings', [DashBoardController::class, 'settings'])->name('admin.settings');
 
 });
 
@@ -45,24 +45,29 @@ Route::prefix('admin')->group(function(){
 
 // Group routes for other pages but without 'auth' prefix in the URL
 
-    Route::get('/login', [UserController::class,'login'])->name('login');
-    Route::post('/login', [UserController::class,'postLogin']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'postLogin']);
 
-   
-    Route::get('/sign', [UserController::class,'sign'])->name('sign');
-    Route::post('/sign', [UserController::class,'postSign']);
 
-    Route::view('/network_system', 'auth.network_system')->name('network_system');
-    Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
-    Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
-    Route::view('/news', 'auth.news')->name('news');
-    Route::view('/details', 'auth.details')->name('details');
-    Route::view('/introduce', 'auth.introduce')->name('introduce');
+Route::get('/sign', [UserController::class, 'sign'])->name('sign');
+Route::post('/sign', [UserController::class, 'postSign']);
 
-    Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::view('/network_system', 'auth.network_system')->name('network_system');
+Route::view('/user_manual', 'auth.user_manual')->name('user_manual');
+Route::view('/tramsac', 'auth.tramsac')->name('tramsac');
+Route::view('/news', 'auth.news')->name('news');
+Route::view('/details', 'auth.details')->name('details');
+Route::view('/introduce', 'auth.introduce')->name('introduce');
 
-    Route::get('/approval', [DashboardController::class, 'approval']);
-    Route::get('/charging-station', [DashboardController::class, 'chargingStation']);
-    Route::get('/email', [DashboardController::class, 'email']);
-    Route::get('/settings', [DashboardController::class, 'settings']);
-    
+Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+
+Route::get('/approval', [DashboardController::class, 'approval']);
+Route::get('/charging-station', [DashboardController::class, 'chargingStation']);
+Route::get('/email', [DashboardController::class, 'email']);
+Route::get('/settings', [DashboardController::class, 'settings']);
+
+//Admin
+Route::prefix('admin')->group(function () {
+  Route::get('/account', [App\Http\Controllers\Admin\UserController::class, 'account'])->name('admin.account');
+  Route::get('/news', [App\Http\Controllers\Admin\NewsController::class, 'news'])->name('admin.news');
+});
